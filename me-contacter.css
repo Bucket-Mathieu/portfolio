@@ -8,17 +8,9 @@ h1 {
     margin-bottom: 0;
 }
 
-h2 {
-    margin-top: 20px;
-}
-
 .group {
     width: 50%;
     min-width: 350px;
-}
-
-.group h2:first-child {
-    margin-top: 0;
 }
 
 form {
