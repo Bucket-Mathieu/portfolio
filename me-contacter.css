@@ -26,13 +26,29 @@ form label {
 form input {
     box-sizing: border-box;
     width: calc(100% - 65px);
+    background-color: var(--contact-input);
+    border-color: var(--contact-btn-border);
 }
 
 form button, form textarea {
     width: 100%;
-    height:min-content ;
+    height: min-content;
+}
+
+button {
+    background-color: var(--contact-btn);
+    color: black;
+    transition: all 0.7s;
+    border-color: var(--contact-btn-border);
+}
+
+button:hover {
+    background-color: var(--contact-btn-hover);
+    color: white;
 }
 
 form textarea {
     resize: none;
+    background-color: var(--contact-input);
+    border-color: var(--contact-btn-border);
 }

@@ -1,8 +1,15 @@
 * {
-    --bg-color: #fff;
-    --main-color: #ddd;
-    --nav-color: #808080;
-    --projects-menu-color: #808080;
+    --bg-color: #f6eaff;
+    --main-color: #e1b1ff;
+    --nav-color: #892ac3;
+    --projects-menu-color: #c26ff5;
+    --projects-border: #892ac3;
+    --projects-bg: #f6eaff;
+    --projects-close-btn: #892ac3;
+    --contact-input: #f6eaff;
+    --contact-btn: #c26ff5;
+    --contact-btn-hover: #892ac3;
+    --contact-btn-border: #c26ff5;
     margin: 0;
 }
 
@@ -17,13 +24,24 @@ h1 {
     text-align: center;
 }
 
+.title {
+    margin-top: 20px;
+    font-size: 70px;
+}
+
 h2 {
     margin: 20px 0 10px 0;
-    font-size: x-large;
+    font-size: 25px;
 }
 
 h3 {
     margin-top: 10px;
+}
+
+.computer {
+    height: 15%;
+    width: 15%;
+    margin: auto;
 }
 
 main {
@@ -85,4 +103,8 @@ article {
 
 p {
     padding-left: 10px;
+}
+
+li, p, span {
+    font-size: 17.5px;
 }

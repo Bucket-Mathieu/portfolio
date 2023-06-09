@@ -38,8 +38,8 @@ h1 {
     width: 150px;
     height: 150px;
     margin: 25px;
-    background-color: var(--main-color);
-    border: #808080 solid thick;
+    background-color: var(--projects-bg);
+    border: var(--projects-border) solid thick;
     border-radius: 50%;
     overflow: hidden;
     transition: all 0.3s;
@@ -63,7 +63,7 @@ h1 {
     border: 1px solid #808080;
     padding: 50px;
     margin-top: 10px;
-    background-color: var(--bg-color);
+    background-color: var(--projects-bg);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -72,7 +72,7 @@ h1 {
     height: 70%;
     overflow-x: hidden;
     z-index: 999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px var(--projects-border);
     animation: fade-in 0.3s ease forwards;
     cursor: default;
 }
@@ -88,9 +88,9 @@ h1 {
 
 .close-button {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #808080;
+    top: 20px;
+    right: 20px;
+    background-color: var(--projects-close-btn);
     color: white;
     padding: 5px 10px;
     border: none;
