@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mon portfolio</title>
+    <link rel="stylesheet" href="commun.css">
+    <link rel="stylesheet" href="mes-projets.css">
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const projects = document.querySelectorAll('.project');
+        const projectDetails = document.querySelectorAll('.project-details');
+        const closeButtons = document.querySelectorAll('.close-button');
+
+        projects.forEach((project, index) => {
+          project.addEventListener('click', () => {
+            projectDetails.forEach((details) => {
+              details.classList.remove('active');
+            });
+            projectDetails[index].classList.add('active');
+          });
+        });
+
+        closeButtons.forEach((button) => {
+          button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const projectDetails = button.closest('.project-details');
+            projectDetails.classList.remove('active');
+          });
+        });
+
+        document.addEventListener('click', (event) => {
+          const isClickInsideProject = event.target.closest('.project');
+          const isClickInsideCloseButton = event.target.closest('.close-button');
+          const isClickOutsideDetail = event.target.closest('.project-details');
+
+          if (!isClickInsideProject && !isClickInsideCloseButton && !isClickOutsideDetail) {
+            projectDetails.forEach((details) => {
+              details.classList.remove('active');
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+          <li><a class="actif" href="mes-projets.html">Mes projets</a></li>
+          <li><a href="me-contacter.html">Me contacter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Mes projets</h1>
+      <article>
+        <div class="a1">
+          <h2>Projets de première année</h2>
+          <label for="touch1"><span>Projets du premier semestre<p class="arrow">&#43;</p></span></label>
+          <input type="checkbox" id="touch1">
+          <div class="slide1">
+            <div class="group">
+              <figure class="project">
+                <img src="img/journal.png" alt="Dépèche">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2>S1.01 : Implémentation d’un besoin client<br>S1.02 : Comparaison d’approches algorithmiques</h2>
+                  <h3>Objectifs :</h3>
+                  <p>
+                    Le but de cette SAÉ est de créer un algorithme qui lit des dépêches et qui est capable de donner le thème de ces dépêches (environnement-sciences, culture, économie, politique, ou sports). Pour cela, nous devions mettre en pratique nos compétences de programmation en java.
+                  </p>
+                  <h3>Organisation :</h3>
+                  <p>
+                    Le projet se réalisait par groupe de deux. Nous avions des objectifs, des axes d’avancement et aussi plusieurs contraintes. Nous avions à disposition deux fichiers contenant chacun 500 dépêches. Le premier fichier servait à notre algorithme de reconnaître les différents thèmes et le deuxième servait à tester notre programme. Nous avions aussi à notre disposition les fichiers contenant la structure du code afin de nous faire gagner du temps. En seulement 4 jours, nous devions compléter notre programme, le corriger, et l’adapter aux contraintes et surtout l’optimiser au maximum, autant dans le temps que dans le résultat obtenu. Le dernier jour, une fois l’algorithme terminé, il a fallu écrire un rapport en anglais comportant un résumé de ce qu’on a réalisé et des résultats obtenus, puis préparer un oral pour présenter notre travail.
+                  </p>
+                  <h3>Conclusion :</h3>
+                  <p>
+                    Grâce à cette SAÉ, j’ai pu renforcer mes compétences en programmation, ma capacité à travailler en groupe et à réaliser un oral.
+                  </p>
+                </div>
+              </figure>
+
+              <figure class="project">
+                <img src="img/debian.png" alt="Debain">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2>S1.03 : Installation d’un poste pour le développement</h2>
+                  <h3>Objectifs :</h3>
+                  <p>
+                    Le but de cette SAÉ est de préparer un poste de travail pour des besoins de développement. Pour cela, nous devions mettre en pratique nos compétences en architecture des ordinateurs et en systèmes d’exploitation.
+                  </p>
+                  <h3>Organisation :</h3>
+                  <p>
+                    Dans un premier temps, il a fallu installer un poste de travail sur une machine virtuelle Debian. Dans un deuxième temps, il a fallu le configurer et ajouter des outils pour le développement dessus. J’ai ensuite réalisé une carte mentale pour décrire les étapes d’installation de ce poste de travail.
+                  </p>
+                  <h3>Conclusion :</h3>
+                  <p>
+                    Grâce à cette SAÉ, j’ai appris à installer et configurer une machine virtuelle pour le développement ainsi que créer une carte mentale de la procédure d’installation.
+                  </p>
+                </div>
+              </figure>
+            </div>
+
+            <div class="group">
+              <figure class="project">
+                <img src="img/ship.png" alt="Titanic">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2>S1.04 : Création d’une base de données</h2>
+                  <h3>Objectifs :</h3>
+                  <p>
+                    Le but de cette SAÉ est de créer une base de données SQL. Pour cela, nous devions mettre en pratique nos compétences en gestion des bases de données.
+                  </p>
+                  <h3>Organisation :</h3>
+                  <p>
+                    Pour réaliser ce projet, nous étions par groupe de deux. Nous devions analyser les facteurs qui ont influé sur la survie des passagers du Titanic. Nous avons exploité les données disponibles pour examiner différents paramètres tels que l'âge, le sexe, la classe des cabines, la présence de membres de la famille, etc. Nous avons ensuite créé une modélisation de base de données en utilisant les données disponibles. Une fois la modélisation de la base de données réalisée, nous avons effectué des analyses pour examiner les corrélations entre les facteurs étudiés et les taux de survie.
+                  </p>
+                  <h3>Conclusion :</h3>
+                  <p>
+                    Grâce à cette SAÉ, j’ai pu renforcer mes compétences en gestion des bases de données, en analyse critique ainsi que ma capacité à travailler en groupe.
+                  </p>
+                </div>
+              </figure>
+
+              <figure class="project">
+                <img src="img/internet.png" alt="Site internet">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2>S1.05 : Recueil de besoins<br>S1.06 : Découverte de l’environnement économique et écologique</h2>
+                  <h3>Objectifs :</h3>
+                  <p>
+                    Le but de cette SAÉ est de créer un site internet ergonomique et écologiquement responsable présentant une entreprise de manière simplifiée et destinée à des élèves de 3ème pour leur recherche de stage. Pour cela, nous devions mettre en pratique nos compétences de développement web en créant un site internet qui répondait à ce besoin client.
+                  </p>
+                  <h3>Organisation :</h3>
+                  <p>
+                    Le projet se réalisait par groupe de cinq. Pour créer le site internet, plusieurs étapes étaient nécessaires. Premièrement, il a fallu écrire un recueil de besoins. Celui-ci contenait toute les informations qui devront être présentes dans le site. Deuxièmement, avant de coder le site, on à créer une maquette qui représente les différentes parties du site ainsi que les composants de celui-ci. Finalement, nous avons pu commencer à coder et styliser le site final. La SAÉ s’est terminée par un oral où l’on devait présenter notre travail.
+                  </p>
+                  <h3>Conclusion :</h3>
+                  <p>
+                    Grâce à cette SAÉ, j’ai appris les différentes étapes de création d’un site internet. J’ai aussi pu grandement renforcer mes compétences en développement web, ma capacité à travailler en groupe et à réaliser un oral.
+                  </p>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <label for="touch2"><span>Projets du second semestre<p class="arrow">&#43;</p></span></label>
+          <input type="checkbox" id="touch2">
+          <div class="slide2">
+            <div class="group">
+              <figure class="encours">
+                <img src="img/hook.png" alt="En cours">
+              </figure>
+
+              <figure class="project">
+                <img src="img/database.png" alt="Base de données">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2></h2>
+                  <h3>Objectifs :</h3>
+                  <p>
+                  </p>
+                  <h3>Organisation :</h3>
+                  <p>
+                  </p>
+                  <h3>Conclusion :</h3>
+                  <p>
+                  </p>
+                </div>
+              </figure>
+            </div>
+
+            <div class="group">
+              <figure class="encours">
+                <img src="img/hook.png" alt="En cours">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

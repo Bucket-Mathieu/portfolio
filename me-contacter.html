@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html lang="fr">
+    <head>
+      <meta charset="UTF-8">
+      <title>Mon portfolio</title>
+      <link rel="stylesheet" href="commun.css">
+      <link rel="stylesheet" href="me-contacter.css">
+    </head>
+
+    <body>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+            <li><a href="mes-projets.html">Mes projets</a></li>
+            <li><a class="actif" href="me-contacter.html">Me contacter</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <h1>Me contacter</h1>
+        <article>
+          <div>
+            <div class="group">
+              <h2>Par télephone</h2>
+              <p>Contactez-moi par télephone au<br>07&nbsp;69&nbsp;12&nbsp;01&nbsp;75</p>
+              <h2>Par email</h2>
+              <p>Contactez-moi par email à l'adresse<br>Mathieu.Bucket@etu.univ-grenoble-alpes.fr</p>
+              <h2>Par lettre</h2>
+              <p>Envoyez-moi une lettre à l'adresse<br>4 Place de la gare, 38000 Grenoble</p>
+            </div>
+            <div class="group">
+              <h2>Par email via un formulaire</h2>
+              <form method="post">
+                <label for="nom">Nom : </label><input id="nom" type="text" name="nom" required/>
+                <label for="prenom">Prénom : </label><input id="prenom" type="text" name="Prénom" required/>
+                <label for="email">Email : </label><input id="email" type="text" name="email" required/>
+                <label for="objet">Objet : </label><input id="objet" type="text" name="objet" required/>
+                
+                <textarea name="message" rows="6" cols="42" placeholder="Saisissez votre message ici" required></textarea>
+                <button type="submit" name="envoyer" value ="envoyer">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </article>
+      </main>
+    </body>
+  </html>

@@ -1,0 +1,38 @@
+article>div {
+    display: flex;
+    flex-direction: row;
+}
+
+.group {
+    width: 50%;
+}
+
+.group h2:first-child {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+form label {
+    text-align: end;
+    width: 60px;
+    padding-right: 5px;
+}
+
+form input {
+    box-sizing: border-box;
+    width: calc(100% - 65px);
+}
+
+form button, form textarea {
+    width: 100%;
+    height:min-content ;
+}
+
+form textarea {
+    resize: none;
+}

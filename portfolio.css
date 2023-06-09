@@ -1,0 +1,89 @@
+main {
+  display: flex;
+  gap: 10px;
+  color: purple;
+  flex-wrap: wrap-reverse;
+}
+
+body {
+  background-image: url(bg-198-198.png);
+  font-family: Arial, Verdana, sans-serif;
+}
+
+header a:hover {
+  color: red;
+}
+
+footer a:hover {
+  color: lime;
+}
+
+.actif {
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+aside {
+  flex-basis: 280px;
+}
+
+header nav ul {
+  justify-content: end;
+  padding-right: 20px;
+}
+
+footer nav ul {
+  justify-content: end;
+  padding-right: 20px;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+div figure {
+  flex-basis: 150px;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  background-color: lightgray;
+  border: darkgrey solid thick;
+  border-radius: 20px;
+}
+
+.miniature {
+  width: 150px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+}
+
+.info {
+  width: 150px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  opacity: 0%;
+}
+
+.info:hover {
+  opacity: 100%;
+  transition:all 1s;
+}
+
+div figure:hover {
+  filter: brightness(65%);
+  transition: all 1s;
+}
