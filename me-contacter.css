@@ -2,6 +2,7 @@ article>div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 h1 {
