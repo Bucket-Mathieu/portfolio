@@ -6,6 +6,7 @@ article>div {
 
 .group {
     width: 50%;
+    min-width
 }
 
 .group h2:first-child {
