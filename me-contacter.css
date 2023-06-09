@@ -1,6 +1,7 @@
 article>div {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .group {
