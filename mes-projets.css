@@ -30,8 +30,19 @@ h1 {
     height: auto;
 }
 
+.arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    margin-right: 10px;
+    font-size: x-large;
+}
 
-
+label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:has(+#touch3:checked) .arrow {
+    transform: rotate(45deg);
+    padding: 0;
+}
 
 
 .project, .encours {
@@ -110,11 +121,6 @@ span {
     position: relative;
 }
 
-.arrow {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 0;
-    margin-right: 10px;
-    font-size: x-large;
+label:hover {
+    cursor: pointer;
 }

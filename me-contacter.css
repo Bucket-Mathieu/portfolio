@@ -49,6 +49,7 @@ button {
 button:hover {
     background-color: var(--contact-btn-hover);
     color: white;
+    cursor: pointer;
 }
 
 form textarea {
