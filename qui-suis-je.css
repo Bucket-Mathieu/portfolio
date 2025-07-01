@@ -24,8 +24,61 @@ figure {
     width: calc(80% - 173px);
     min-width: 400px;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.section-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 3px 8px rgba(0,0,0,0.07);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.section-card h2 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #2a2a2a;
+    margin-bottom: 0.5rem;
+}
+
+.section-card ul, .section-card div {
+    margin: 0;
+    padding: 0;
 }
 
 li {
     list-style: none;
+}
+
+.competences {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-card ul ul {
+    margin-left: 1.5em;
+    padding-left: 0.5em;
+    list-style: none;
+}
+
+@media (max-width: 700px) {
+    .content {
+        min-width: unset;
+        width: 100%;
+        margin: 0;
+    }
+    figure {
+        margin: 0 auto 2rem auto;
+        position: static;
+    }
 }

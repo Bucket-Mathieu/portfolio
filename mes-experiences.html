@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mon portfolio</title>
+    <link rel="stylesheet" href="commun.css">
+    <link rel="stylesheet" href="mes-projets.css">
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const projects = document.querySelectorAll('.project');
+        const projectDetails = document.querySelectorAll('.project-details');
+        const closeButtons = document.querySelectorAll('.close-button');
+
+        projects.forEach((project, index) => {
+          project.addEventListener('click', () => {
+            projectDetails.forEach((details) => {
+              details.classList.remove('active');
+            });
+            projectDetails[index].classList.add('active');
+          });
+        });
+
+        closeButtons.forEach((button) => {
+          button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const projectDetails = button.closest('.project-details');
+            projectDetails.classList.remove('active');
+          });
+        });
+
+        document.addEventListener('click', (event) => {
+          const isClickInsideProject = event.target.closest('.project');
+          const isClickInsideCloseButton = event.target.closest('.close-button');
+          const isClickOutsideDetail = event.target.closest('.project-details');
+
+          if (!isClickInsideProject && !isClickInsideCloseButton && !isClickOutsideDetail) {
+            projectDetails.forEach((details) => {
+              details.classList.remove('active');
+            });
+          }
+        });
+
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="qui-suis-je.html">Qui suis-je ?</a></li>
+          <li><a href="mes-projets.html">Mes projets</a></li>
+          <li><a class="actif" href="mes-experiences.html">Mes expériences</a></li>
+          <li><a href="me-contacter.html">Me contacter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Mes expériences professionnelles</h1>
+      <article>
+
+        <div class="a1">
+          <h2>IUT2 - Grenoble (38)</h2>
+          <label for="touch1"><span>Stage<p class="arrow">&#43;</p></span></label>
+          <input type="checkbox" id="touch1">
+          <div class="slide1">
+            <div class="group">
+              <figure class="project">
+                <img src="img/stage.png" alt="Stage">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2>Stage de 2ème année de BUT Informatique</h2>
+                  <h3>Contexte du stage :</h3>
+                  <p>Ce stage s'est déroulé au sein de la société Sarrasola, une entreprise d'une trentaine d'employés située à Grésy-sur-Isère, en Savoie. Sarrasola est membre du groupe Vinci et fait partie de la marque Omexom. Elle est spécialisée dans l'ingénierie des réseaux électriques, l'expertise des structures, la maintenance prédictive, les mesures 3D, les contrôles géométriques, la maitrise d'œuvre et le transport par câble.</p>
+                  <p>L'objectif de la société Sarrasola était de posséder un nouvel outil de gestion budgétaire qui viendrait remplacer l'utilisation non automatisée de deux fichiers de calculs.</p>
+                  <h3>Sujet du stage :</h3>
+                  <p>Ma mission, au cours de mon stage au sein de Sarrasola, était de créer un outil permettant de calculer un budget et de générer un planning pour des projets. Cet outil devait utiliser les données de deux autres fichiers, un fichier "Bordereau", qui contient les prix de vente de l'ensemble des articles proposés, et un fichier "Outil de Chiffrage du Marché" avec uniquement les articles utiles au projet ainsi que leurs quantités. Cet outil fonctionne sur Excel grâce à des macros développées dans le langage VBA et des formules Excel.</p>
+                  <h3>Réalisation :</h3>
+                  <p>Avant la phase de développement, il a fallu rédiger un cahier des charges de la réalisation. Ce document présente l'objectif du développement, le fonctionnement général, le détail de chaque onglet du fichier Excel, ainsi que les algorithmes utilisés pour la mise à jour des données.</p>
+                  <p>Après la rédaction d'un cahier des charges, le développement de l'outil a débuté. Les premières automatisations du calcul du budget ont mis en évidence la nécessité de créer une architecture contenant la liste des articles, leur prix, leur masse horaire, leur coût ainsi que d'éventuels ajustements. La réalisation des plannings a révélé la nécessité de mettre en place un système de dépendance des tâches pour les organiser entre elles.</p>
+                  <p>Le développement de l'outil implique l'utilisation de quatre fichiers différents. Aux deux fichiers sources existants ("Outil de Chiffrage du Marché" et "Bordereau") s'ajoute un fichier source développé au cours du stage ("Masse Horaire Frais") afin de posséder toutes les données nécessaires au calcul du budget et à la génération du planning. Enfin, le fichier faisant l'objet du stage ("Budget Planning") permet d'effectuer les calculs et d'apporter les éventuels ajustements. Chacun de ces fichiers a un rôle spécifique et complémentaire dans le processus de calcul du budget et de génération de planning.</p>
+                  <h3>Difficultés rencontrées :</h3>
+                  <p>La première difficulté qui s'est présentée a été la méconnaissance du langage VBA et de l'utilisation d'Excel. J'ai donc dû apprendre, en autonomie et au fil de leur utilisation, à maitriser ces outils.</p>
+                  <p>Ensuite, un autre problème important a été l'utilisation de fichiers sources non modifiables, et potentiellement évolutifs. Cela a impliqué de développer l'outil de manière flexible, afin qu'il soit adaptable à toutes modifications des fichiers sources.</p>
+                  <p>Enfin, j'ai rencontré un dernier problème lors de la génération du planning qui a révélé un risque de boucles de dépendances. Cela a nécessité l'implémentation d'un mécanisme qui les détecte et prévient l'utilisateur par un message d'erreur.</p>
+                  <h3>Bilan :</h3>
+                  <p>Ce stage, en tant que première expérience professionnelle, m'a permis de découvrir le monde de l'entreprise. Il m'a également permis d'enrichir mes connaissances et mes compétences en programmation et en résolution de problèmes techniques. Il a été très motivant et gratifiant de développer un outil qui sera réellement utile à Sarrasola.</p>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <label for="touch2"><span>Alternance<p class="arrow">&#43;</p></span></label>
+          <input type="checkbox" id="touch2">
+          <div class="slide2">
+            <div class="group">
+              <figure class="project">
+                <img src="img/stage.png" alt="Alternance">
+                <div class="project-details">
+                  <button class="close-button">Fermer</button>
+                  <h2>Alternance de 3ème année de BUT Informatique</h2>
+                  <h3>Contexte de l'alternance :</h3>
+                  <p>Au cours de mon alternance au sein de l’entreprise Sarrasola, j’ai participé à la refonte et à l’optimisation de plusieurs outils métiers indispensables au pilotage des affaires et à l’automatisation de tâches récurrentes. Ayant une expérience préalable chez Sarrasola, j’ai une facilité dans la compréhension des besoins des utilisateurs et dans le fonctionnement interne de l’entreprise.</p>
+                  <h3>Première mission :</h3>
+                  <p>Dans un premier temps, j’ai conçu et développé une application web en PHP/Symfony, accompagnée d’une base de données PostgreSQL, permettant de remplacer un ancien outil sous la forme d’un fichier Excel. Après avoir dressé un bilan fonctionnel détaillé, j’ai réalisé des maquettes sous Whimsical et modélisé un diagramme relationnel. L’architecture MVC de Symfony a servi de base pour la mise en place de contrôleurs, de templates Twig et de modules JavaScript assurant tri, filtre, recherche et export de tableaux. L’application offre une gestion fine des rôles (utilisateurs ou administrateurs), une authentification sécurisée via LDAP/SSL et des sauvegardes automatiques. Les tests de sécurité, la protection des données au regard du RGPD et le déploiement sur serveur HTTPS garantissent la robustesse et la confidentialité du système.</p>
+                  <h3>Deuxième mission :</h3>
+                  <p>Parallèlement, j’ai développé une solution d’intelligence artificielle sous MATLAB destinée à la détection automatique d’anomalies sur des signaux issus de capteurs. J’ai centralisé les données issues de fichiers HDF5, créé une base de données unifiée, segmenté les signaux et extrait des caractéristiques statistiques (min, max, moyenne, entropie, etc.). Optant pour la "Statistics and Machine Learning Toolbox", j’ai entraîné plusieurs modèles de classification, optimisé les hyperparamètres et mis en place des stratégies de tolérance et de prédictions croisées. Les tests réalisés ont atteint jusqu’à 72 % de justesse, ouvrant la voie à une phase de validation en conditions réelles.</p>
+                  <h3>Missions secondaires :</h3>
+                  <p>Enfin, j’ai conçu plusieurs macros VBA dans Excel pour automatiser la génération de tableaux de pose, le calcul de budget et la préparation de plannings pour des affaires et l’organisation de dossiers DAME (Demande d’Autorisation de Mise en Exploitation) pour les remontées mécaniques. Ces macros réduisent significativement le temps de traitement manuel et minimisent les erreurs humaines.</p>
+                  <h3>Perspectives d'amélioration :</h3>
+                  <p>Des perspectives d’amélioration subsistent, notamment l’écriture de tests unitaires et fonctionnels, l’optimisation du design CSS, l’enrichissement continu des données pour l’IA et l’automatisation des analyses de sécurité.</p>
+                  <h3>Bilan de l'alternance :</h3>
+                  <p>Cette alternance chez Sarrasola a été une expérience enrichissante, tant sur le plan technique qu’humain, grâce à des missions concrètes réalisées dans un environnement bienveillant. J’y ai développé une intelligence artificielle et une application web, ce qui m’a permis de renforcer mes compétences techniques tout en gagnant en autonomie et en polyvalence. Enfin, cette expérience m’a offert une meilleure compréhension du fonctionnement d’une entreprise et de l’impact concret de l’informatique sur des problématiques métiers.</p>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </main>
+  </body>
+</html>

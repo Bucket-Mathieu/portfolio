@@ -2,22 +2,28 @@ h1 {
     margin-bottom: 0;
 }
 
-.slide1, .slide2, .slide3 {
+p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.slide1, .slide2, .slide3, .slide4, .slide5, .slide6 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     justify-content: center;
-    height:0px;
+    max-height: 0px;
     overflow: hidden;
     margin: 10px 0;
+    transition: all 0.3s;
 }
 
-.a1, .a2 {
+.a1, .a2, .a3 {
     position: relative;
 }
 
-#touch1, #touch2, #touch3 {
+#touch1, #touch2, #touch3, #touch4, #touch5, #touch6 {
     position: absolute;
     opacity: 0;
     top: 0;
@@ -26,8 +32,10 @@ h1 {
     width: 0px;
 }
 
-#touch1:checked + .slide1, #touch2:checked + .slide2, #touch3:checked + .slide3 {
+#touch1:checked + .slide1, #touch2:checked + .slide2, #touch3:checked + .slide3, #touch4:checked + .slide4, #touch5:checked + .slide5, #touch6:checked + .slide6 {
     height: auto;
+    max-height: 999px;
+    transition: all 1s;
 }
 
 .arrow {
@@ -37,13 +45,14 @@ h1 {
     margin: 0;
     margin-right: 10px;
     font-size: x-large;
+    transition: all 0.3s;
 }
 
-label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:has(+#touch3:checked) .arrow {
+label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:has(+#touch3:checked) .arrow, label:has(+#touch4:checked) .arrow, label:has(+#touch5:checked) .arrow, label:has(+#touch6:checked) .arrow {
     transform: rotate(45deg);
     padding: 0;
+    transition: all 0.3s;
 }
-
 
 .project, .encours {
     width: 150px;
@@ -74,7 +83,7 @@ label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:ha
     border: 1px solid #808080;
     padding: 50px;
     margin-top: 10px;
-    background-color: var(--projects-bg);
+    background: rgba(255, 255, 255, 0.97);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -82,14 +91,42 @@ label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:ha
     width: calc(80% - 50px);
     height: 70%;
     overflow-x: hidden;
+    overflow-y: auto;
     z-index: 999;
-    box-shadow: 0 0 8px var(--projects-border);
-    animation: fade-in 0.3s ease forwards;
-    cursor: default;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), 0 0 8px var(--projects-border);
+    backdrop-filter: blur(6px);
+    transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .project-details.active {
     display: block;
+    opacity: 1;
+    pointer-events: auto;
+    animation: fade-in 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.project-details::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(220, 220, 220, 0.25);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 0;
 }
 
 .project img , .encours img{
@@ -98,14 +135,26 @@ label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:ha
 }
 
 .close-button {
-    position: fixed;
+    position: sticky;
     top: 20px;
     right: 20px;
+    float: right;
     background-color: var(--projects-close-btn);
     color: white;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.close-button:hover {
+    background-color: #e74c3c;
+    color: #fff;
+    transform: scale(1.08);
 }
 
 .group {
@@ -117,10 +166,25 @@ label:has(+#touch1:checked) .arrow, label:has(+#touch2:checked) .arrow, label:ha
 span {
     display: block;
     padding: 5px;
+    padding-left: 10px;
     background-color: var(--projects-menu-color);
     position: relative;
+    border-radius: 10px;
 }
 
 label:hover {
     cursor: pointer;
+}
+
+label span {
+    color: black;
+    transition: background 0.5s, color 0.5s, box-shadow 0.2s, transform 0.2s;
+}
+
+label:hover span {
+    background-color: var(--nav-color);
+    color: white;
+    box-shadow: 0 1px 4px rgba(31,38,135,0.06);
+    transform: scale(1.03);
+    transition: background 0.5s, color 0.5s, box-shadow 0.2s, transform 0.2s;
 }

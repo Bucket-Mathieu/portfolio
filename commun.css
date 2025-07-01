@@ -1,15 +1,15 @@
 * {
-    --bg-color: #f6eaff;
-    --main-color: #e1b1ff;
-    --nav-color: #892ac3;
-    --projects-menu-color: #c26ff5;
-    --projects-border: #892ac3;
-    --projects-bg: #f6eaff;
-    --projects-close-btn: #892ac3;
-    --contact-input: #f6eaff;
-    --contact-btn: #c26ff5;
-    --contact-btn-hover: #892ac3;
-    --contact-btn-border: #c26ff5;
+    --bg-color: #eaf5ff;
+    --main-color: #b3dafe;
+    --nav-color: #3a90e1;
+    --projects-menu-color: #64b4ff;
+    --projects-border: #3a90e1;
+    --projects-bg: #eaf5ff;
+    --projects-close-btn: #3a90e1;
+    --contact-input: #eaf5ff;
+    --contact-btn: #64b4ff;
+    --contact-btn-hover: #3a90e1;
+    --contact-btn-border: #64b4ff;
     margin: 0;
 }
 
@@ -53,6 +53,7 @@ main {
     margin-bottom: 100px;
     padding: 50px 70px;
     width: 70%;
+    border-radius: 15px;
 }
 
 nav ul {
@@ -87,7 +88,7 @@ header a {
 header a:hover {
     background-color: var(--nav-color);
     color: white;
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 
 header a.actif {
